@@ -1,7 +1,7 @@
 version: '2'
 services:
   eureka-server1:
-    build: .
+    images: eureka-server-ha
     container_name: eureka-server1
     hostname: node1
     networks:
@@ -12,7 +12,7 @@ services:
       - spring.profiles.active=node1
 
   eureka-server2:
-    build: .
+    images: eureka-server-ha
     container_name: eureka-server2
     hostname: node2
     networks:
