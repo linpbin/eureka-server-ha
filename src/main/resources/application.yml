@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eureka-server-ha
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node2:8762/eureka/,http://node1:8761/eureka/
+---
+spring:
+  profiles: node1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: node1
+---
+spring:
+  profiles: node2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: node2
